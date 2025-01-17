@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import fs from "fs";
 import csv from "csv-parser";
+import path from "path";
 import geminiService from "../services/gemini";
 import { Message } from "../models/message";
 
@@ -10,9 +11,10 @@ declare module "express-session" {
   }
 }
 
-// Load OWASP data (mocked)
+const csvFilePath = path.join(__dirname, "../../owasp_qa.csv");
+
 const owaspData: any[] = [];
-fs.createReadStream("owasp_qa.csv")
+fs.createReadStream(csvFilePath)
   .pipe(csv())
   .on("data", (data) => owaspData.push(data))
   .on("end", () => console.log("OWASP data loaded."))
