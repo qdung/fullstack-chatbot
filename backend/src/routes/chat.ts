@@ -22,6 +22,8 @@ fs.createReadStream(csvFilePath)
 
 const findOwaspAnswers = (query?: string) => {
   const lowerCaseQuery = query ? query.toLowerCase() : "";
+  console.log(lowerCaseQuery);
+  console.log(owaspData);
   return owaspData.filter(
     (qa) =>
       qa.Question.toLowerCase().includes(lowerCaseQuery) ||
