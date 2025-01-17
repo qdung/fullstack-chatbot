@@ -20,8 +20,8 @@ fs.createReadStream(csvFilePath)
   .on("end", () => console.log("OWASP data loaded."))
   .on("error", (error) => console.error("Error loading OWASP data:", error));
 
-const findOwaspAnswers = (query: string) => {
-  const lowerCaseQuery = query.toLowerCase();
+const findOwaspAnswers = (query?: string) => {
+  const lowerCaseQuery = query ? query.toLowerCase() : "";
   return owaspData.filter(
     (qa) =>
       qa.Question.toLowerCase().includes(lowerCaseQuery) ||
