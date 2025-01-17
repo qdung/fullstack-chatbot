@@ -43,6 +43,8 @@ router.post("/", async (req: Request, res: Response): Promise<void> => {
     return;
   }
 
+  console.log({ userMessage });
+
   const owaspResults = findOwaspAnswers(userMessage);
   let owaspContext = "";
 
