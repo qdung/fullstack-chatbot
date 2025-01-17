@@ -22,13 +22,11 @@ fs.createReadStream(csvFilePath)
 
 const findOwaspAnswers = (query?: string) => {
   const lowerCaseQuery = query ? query.toLowerCase() : "";
-  console.log(lowerCaseQuery);
-  console.log(owaspData);
+
   return owaspData.filter(
     (qa) =>
       qa.Question.toLowerCase().includes(lowerCaseQuery) ||
-      qa.Answer.toLowerCase().includes(lowerCaseQuery) ||
-      qa.Category.toLowerCase().includes(lowerCaseQuery)
+      qa.Answer.toLowerCase().includes(lowerCaseQuery)
   );
 };
 
@@ -44,8 +42,6 @@ router.post("/", async (req: Request, res: Response): Promise<void> => {
     res.status(400).json({ error: "Message must be a string" });
     return;
   }
-
-  console.log({ userMessage });
 
   const owaspResults = findOwaspAnswers(userMessage);
   let owaspContext = "";
