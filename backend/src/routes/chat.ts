@@ -11,7 +11,7 @@ declare module "express-session" {
   }
 }
 
-const csvFilePath = path.join(__dirname, "../../owasp_qa.csv");
+let csvFilePath = path.join(process.cwd(), "owasp_qa.csv");
 
 const owaspData: any[] = [];
 fs.createReadStream(csvFilePath)
