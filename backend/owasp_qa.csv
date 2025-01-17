@@ -1,0 +1,6 @@
+Question,Answer
+"What is OWASP?", "OWASP stands for Open Web Application Security Project, a nonprofit foundation that works to improve the security of software."
+"What is the purpose of the OWASP Top 10?", "The OWASP Top 10 is a regularly updated report outlining the most critical security risks to web applications."
+"What is SQL Injection?", "SQL Injection is a code injection technique used to attack data-driven applications by inserting malicious SQL statements into an entry field."
+"What is Cross-Site Scripting (XSS)?", "Cross-Site Scripting (XSS) is a vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users."
+"What is Cross-Site Request Forgery (CSRF)?", "Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application in which they are currently authenticated."
